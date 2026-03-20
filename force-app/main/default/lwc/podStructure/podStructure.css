@@ -1,0 +1,134 @@
+.pod-scope {
+    --pod-primary-header: #1589ee;
+    --pod-primary-figure: #8fc9fa;
+    --pod-secondary-header: #fe9339;
+    --pod-secondary-figure: #ffd399;
+    --pod-title: #032d60;
+    --pod-subtitle: #03234d;
+    font-family: 'Salesforce Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.pod-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.pod-title {
+    color: var(--pod-title);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
+}
+
+.pod-subtitle {
+    color: var(--pod-subtitle);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 48rem;
+    opacity: 0.95;
+}
+
+.pod-toolbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pod-row {
+    gap: 1rem 1.25rem;
+}
+
+.pod-row_primary {
+    justify-content: center;
+}
+
+.pod-row_secondary {
+    justify-content: center;
+}
+
+.pod-card-wrap {
+    flex: 0 1 auto;
+    min-width: 8.5rem;
+    max-width: 11rem;
+}
+
+.pod-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pod-card__label {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.65rem 0.5rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(3, 45, 96, 0.12);
+}
+
+.pod-card_primary .pod-card__label {
+    background: var(--pod-primary-header);
+}
+
+.pod-card_secondary .pod-card__label {
+    background: var(--pod-secondary-header);
+}
+
+.pod-card__connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.5rem 0;
+}
+
+.pod-card__dot {
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 50%;
+    background: #c9c9c9;
+}
+
+.pod-card__figure {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pod-card__figure_primary {
+    color: var(--pod-primary-header);
+    background: rgba(21, 137, 238, 0.12);
+}
+
+.pod-card__figure_secondary {
+    color: var(--pod-secondary-header);
+    background: rgba(254, 147, 57, 0.15);
+}
+
+.pod-card__silhouette {
+    width: 2.5rem;
+    height: auto;
+}
+
+.pod-card__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pod-state {
+    min-height: 6rem;
+}
