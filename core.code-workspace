@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "/Users/michael.norton/workspace/dx/nca"
+    }
+  ],
+  "settings": {
+    "eslint.workingDirectories": [
+      "/Users/michael.norton/workspace/dx/nca"
+    ],
+    "eslint.validate": [
+      "javascript",
+      "typescript"
+    ],
+    "eslint.options": {
+      "overrideConfigFile": "/Users/michael.norton/workspace/dx/nca/.eslintrc.json"
+    }
+  }
+}
