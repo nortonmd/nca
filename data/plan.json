@@ -1,0 +1,11 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "FAQ_Countdown_Message__c",
+        "referenceId": "FAQ_MessageRef1"
+      },
+      "Message__c": "@FAQ_Countdown_Message.csv"
+    }
+  ]
+}

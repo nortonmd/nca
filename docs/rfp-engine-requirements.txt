@@ -1,0 +1,26 @@
+To build the automated RFP Engine for Hilton utilizing the Salesforce ecosystem, the architecture is designed to handle nearly $1.5B in annually negotiated revenue across approximately 36,000 total users.
+
+Here is the blueprint for the system based on the proposed Salesforce technology stack:
+
+**1. Data Storage and Centralized Management (Salesforce Sales Cloud)**
+*   **Single Source of Truth:** The core of the RFP engine will utilize **Sales Cloud and Custom Objects** to centralize all RFP data. This replaces the 20-year-old legacy system (OnQ SM) and provides Hilton Worldwide Sales (HWS) account owners with a consolidated view of all accounts, contacts, and RFP records.
+*   **Data Enrichment:** The system will store critical GBTA standard questions, custom customer questions, and hotel-specific amenities and pricing data.
+
+**2. Transaction Management and Automated Workflows (Salesforce Flow)**
+*   **Routing and Orchestration:** You will use **Salesforce Flow** to automate the complex, multi-stage processes of the RFP lifecycle. This includes automatically routing ingested RFPs to the appropriate hotels out of Hilton's 8,000+ properties based on the client's requests.
+*   **Approvals and Validation:** **Salesforce Approval Processes** will enforce structured governance over rate offers and amendments, ensuring that bids adhere to Hilton's strategic sales guidelines. Validation rules will maintain data integrity at each stage of the bid submission.
+*   **Notifications:** The transaction engine will automatically trigger notifications to hotel users regarding required actions, impending deadlines, and counter-offers during back-and-forth renegotiations.
+
+**3. External Portals (Salesforce Experience Cloud & MuleSoft)**
+*   **Property RFP Responses (Experience Cloud):** You will build a secure, branded portal using **Salesforce Experience Cloud** specifically for the 35,000+ hotel users. Accessible via Hilton's Single Sign-On (SSO), this portal allows hotel operators to view assigned RFPs, receive AI-driven rate guidance, answer GBTA and custom questions, input their rate and amenity offers, and directly manage renegotiations without relying on email chains.
+*   **Client RFP Ingestion (MuleSoft):** While Experience Cloud handles the hotel side, the sources note that corporate clients typically submit RFPs via email or legacy 3rd-party industry platforms like Cvent and Lanyon. To handle client submissions, the architecture utilizes **MuleSoft** as an intelligent ingestion engine to capture these requests, enrich them with internal Hilton data, and automatically generate the RFP records in Salesforce.
+
+**4. Rate Loading and System Integration (MuleSoft)**
+*   Once a client accepts a bid, **MuleSoft** will act as the integration layer to automate the final rate loading process. It will connect Salesforce to Hilton's internal systems, such as the Global Distribution System (GDS) and Revenue Management Systems (RMS), ensuring the contracted rates become instantly bookable for corporate travelers.
+
+**5. Observability and Analytics (Tableau & Salesforce Dashboards)**
+*   **Real-Time Tracking:** To provide administrators and HWS users with observability, the system will rely on **Salesforce Dashboards and Reports** combined with **Embedded Tableau**.
+*   **Strategic Insights:** This setup allows stakeholders to track active RFPs, monitor hotel response times, view bid statuses, and conduct win/loss and rate performance analysis to optimize future negotiation strategies.
+
+**6. AI and Guided Selling (Agentforce & Lightning Platform)**
+*   The system architecture leverages **Salesforce Agentforce and Next Best Action** on the Lightning Platform to supply hotels with intelligent rate guidance and proactive recommendations during the bid preparation phase.

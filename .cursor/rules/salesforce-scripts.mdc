@@ -1,0 +1,19 @@
+---
+description: Enforce file locations for Salesforce scripts
+alwaysApply: true
+---
+
+# Salesforce Script Conventions
+
+- Always save anonymous Apex scripts in `scripts/apex/` with a `.apex` extension.
+- Always save SOQL queries in `scripts/soql/` with a `.soql` extension.
+
+## Examples
+
+```
+✅ scripts/apex/loadMessages.apex
+✅ scripts/soql/getCountdownMessages.soql
+
+❌ scripts/loadMessages.apex
+❌ queries/getCountdownMessages.soql
+```

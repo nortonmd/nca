@@ -1,0 +1,52 @@
+<template>
+    <div class="countdown-container">
+
+        <!-- Marriott Header -->
+        <div class="marriott-header">
+            <div class="marriott-logo">
+                <span class="marriott-m">M</span><span class="marriott-name">arriott</span>
+            </div>
+            <div class="marriott-tagline">Where the World Comes Together</div>
+        </div>
+
+        <!-- Agentforce Astro -->
+        <div class="astro-section">
+            <img
+                src="https://developer.salesforce.com/files/astro_full.png"
+                alt="Agentforce Astro"
+                class="astro-image"
+                onerror={handleAstroError}
+            />
+            <div class="agentforce-badge">
+                <span class="agentforce-dot"></span>
+                Powered by Agentforce
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-header">
+            <div class="countdown-label">Estimated Wait Time</div>
+            <template if:true={hasRendered}>
+                <div class="countdown-time" style={textColorStyle}>{formattedTime}</div>
+            </template>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar" style={progressBarStyle}></div>
+        </div>
+
+        <!-- Rotating Message -->
+        <div class="message-display">
+            <p>{currentMessage}</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="marriott-footer">
+            &copy; Marriott International, Inc. All Rights Reserved.
+        </div>
+
+    </div>
+</template>

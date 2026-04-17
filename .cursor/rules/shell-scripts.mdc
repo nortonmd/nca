@@ -1,0 +1,22 @@
+---
+description: Enforce file location for shell scripts
+alwaysApply: true
+---
+
+# Shell Script Conventions
+
+- Always save shell scripts in the `bin/` folder with a `.sh` extension.
+- Always name shell scripts using kebab-case (lowercase words separated by hyphens).
+
+## Examples
+
+```
+✅ bin/open-org.sh
+✅ bin/run-apex.sh
+✅ bin/deploy-metadata.sh
+
+❌ bin/openOrg.sh        (camelCase)
+❌ bin/open_org.sh       (snake_case)
+❌ bin/OpenOrg.sh        (PascalCase)
+❌ scripts/open-org.sh   (wrong folder)
+```
