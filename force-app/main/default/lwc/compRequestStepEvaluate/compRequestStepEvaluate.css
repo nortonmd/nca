@@ -1,0 +1,215 @@
+/* ── Step Title ──────────────────────────────────────────────────────────── */
+.step-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #16325c;
+    margin: 0 0 4px;
+}
+
+.step-description {
+    color: #54698d;
+    font-size: 0.85rem;
+    margin: 0 0 20px;
+}
+
+/* ── Evaluation Banner ───────────────────────────────────────────────────── */
+.eval-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+}
+
+.eval-banner--ok {
+    background: #e8f5e9;
+    border: 1px solid #4caf50;
+}
+
+.eval-banner--warning {
+    background: #fff3e0;
+    border: 1px solid #ff8800;
+}
+
+.banner-icon {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+}
+
+.banner-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 0 0 4px;
+    color: #16325c;
+}
+
+.eval-banner--warning .banner-title {
+    color: #7d4500;
+}
+
+.banner-body {
+    font-size: 0.82rem;
+    margin: 0;
+    color: #3e3e3c;
+    line-height: 1.4;
+}
+
+.eval-banner--warning .banner-body {
+    color: #7d4500;
+}
+
+/* ── Amount Comparison Row ───────────────────────────────────────────────── */
+.amount-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: #f8f9fb;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.amount-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+.amount-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #54698d;
+}
+
+.amount-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #16325c;
+}
+
+.amount-value.threshold {
+    color: #706e6b;
+}
+
+.amount-divider {
+    font-size: 0.8rem;
+    color: #706e6b;
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+
+/* ── Summary Card ────────────────────────────────────────────────────────── */
+.summary-card {
+    background: #f8f9fb;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.summary-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #54698d;
+    margin: 0 0 12px;
+}
+
+.summary-list {
+    margin: 0;
+    padding: 0;
+}
+
+.summary-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid #e5e8ed;
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-dt {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #706e6b;
+    min-width: 90px;
+    flex-shrink: 0;
+}
+
+.summary-dd {
+    font-size: 0.88rem;
+    color: #16325c;
+    margin: 0;
+    word-break: break-word;
+}
+
+.amount-highlight {
+    font-weight: 700;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: #1a6fd4;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: #0b5dbf;
+}
+
+.btn-submit:disabled {
+    background-color: #b0c4de;
+    cursor: not-allowed;
+}
+
+.btn-back {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: #54698d;
+    border: 1px solid #d8dde6;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover:not(:disabled) {
+    background-color: #f4f6f9;
+}
+
+.btn-back:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

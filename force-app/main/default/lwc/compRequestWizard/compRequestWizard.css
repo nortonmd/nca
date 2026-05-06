@@ -1,0 +1,98 @@
+/* ── Wrapper ─────────────────────────────────────────────────────────────── */
+.wizard-wrapper {
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.wizard-header {
+    background-color: #0a1f5c;
+    border-radius: 16px 16px 0 0;
+    padding: 24px 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #ffffff;
+}
+
+.wizard-header__icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.wizard-header__title {
+    margin: 0 0 2px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.wizard-header__subtitle {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────── */
+.wizard-card {
+    background: #ffffff;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+/* ── Progress Indicator ──────────────────────────────────────────────────── */
+.progress-container {
+    padding: 20px 24px 0;
+    background: #f8f9fb;
+    border-bottom: 1px solid #e5e8ed;
+}
+
+/* ── Step Content ────────────────────────────────────────────────────────── */
+.step-container {
+    padding: 24px;
+}
+
+/* ── Success State ───────────────────────────────────────────────────────── */
+.success-container {
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #04844b;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 64px;
+    margin: 0 auto 20px;
+}
+
+.success-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #16325c;
+    margin: 0 0 12px;
+}
+
+.success-message {
+    color: #54698d;
+    font-size: 0.9rem;
+    margin: 0 0 24px;
+    line-height: 1.5;
+}
+
+.success-message.flagged {
+    background: #fff3e0;
+    border: 1px solid #ff8800;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #7d4500;
+}
+
+.success-btn {
+    margin: 0 6px 12px;
+}

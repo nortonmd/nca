@@ -1,0 +1,101 @@
+<template>
+    <div class="step-details">
+        <h2 class="step-title">Request Details</h2>
+        <p class="step-description">Enter the details for the complimentary request.</p>
+
+        <!-- Guest Contact -->
+        <div class="field-group">
+            <label class="field-label required-label" for="contactPicker">Guest Contact</label>
+            <lightning-record-picker
+                id="contactPicker"
+                label="Guest Contact"
+                variant="label-hidden"
+                placeholder="Search for a guest…"
+                object-api-name="Contact"
+                value={contactId}
+                onchange={handleContactChange}
+                class="full-width"
+            ></lightning-record-picker>
+            <template lwc:if={showContactError}>
+                <p class="field-error">Please select a guest contact.</p>
+            </template>
+        </div>
+
+        <!-- Comp Type -->
+        <div class="field-group">
+            <label class="field-label required-label" for="compType">Type of Comp</label>
+            <lightning-combobox
+                id="compType"
+                label="Type of Comp"
+                variant="label-hidden"
+                placeholder="Select comp type…"
+                options={compTypeOptions}
+                value={compType}
+                onchange={handleCompTypeChange}
+                class="full-width"
+            ></lightning-combobox>
+            <template lwc:if={showCompTypeError}>
+                <p class="field-error">Please select a comp type.</p>
+            </template>
+        </div>
+
+        <!-- Requested Amount -->
+        <div class="field-group">
+            <label class="field-label required-label" for="requestedAmount">Requested Amount ($)</label>
+            <lightning-input
+                id="requestedAmount"
+                label="Requested Amount"
+                variant="label-hidden"
+                type="number"
+                formatter="decimal"
+                step="0.01"
+                min="0"
+                placeholder="0.00"
+                value={requestedAmount}
+                onchange={handleAmountChange}
+                class="full-width"
+            ></lightning-input>
+            <template lwc:if={showAmountError}>
+                <p class="field-error">Please enter a valid amount greater than zero.</p>
+            </template>
+        </div>
+
+        <!-- Reason -->
+        <div class="field-group">
+            <label class="field-label required-label" for="reason">Reason</label>
+            <lightning-textarea
+                id="reason"
+                label="Reason"
+                variant="label-hidden"
+                placeholder="Describe the reason for this comp…"
+                max-length="1000"
+                value={reason}
+                onchange={handleReasonChange}
+                class="full-width"
+            ></lightning-textarea>
+            <template lwc:if={showReasonError}>
+                <p class="field-error">Please provide a reason for this comp request.</p>
+            </template>
+        </div>
+
+        <!-- Notes -->
+        <div class="field-group">
+            <label class="field-label" for="notes">Additional Notes</label>
+            <lightning-textarea
+                id="notes"
+                label="Additional Notes"
+                variant="label-hidden"
+                placeholder="Any additional context or notes…"
+                max-length="2000"
+                value={notes}
+                onchange={handleNotesChange}
+                class="full-width"
+            ></lightning-textarea>
+        </div>
+
+        <!-- Next Button -->
+        <div class="btn-group">
+            <button class="btn-next" onclick={handleNext}>NEXT →</button>
+        </div>
+    </div>
+</template>

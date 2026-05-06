@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grants access to create and manage Casino Comp Requests. Assign to staff who submit comp requests on behalf of guests.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Casino Comp Request User</label>
+    <!-- Apex Class Access -->
+    <classAccesses>
+        <apexClass>CompRequestController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+
+    <!-- Object CRUD -->
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Comp_Request__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+
+    <!-- Field-Level Security -->
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Comp_Request__c.Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Comp_Request__c.Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Comp_Request__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Comp_Request__c.Flagged_For_Review__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Comp_Request__c.Submitted_By__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+</PermissionSet>

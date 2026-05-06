@@ -1,0 +1,65 @@
+<template>
+    <div class="step-container">
+        <p class="slds-text-heading_small slds-m-bottom_medium">
+            Step 2 of 4 — Reporter Information
+        </p>
+
+        <lightning-input
+            type="text"
+            name="reporterName"
+            label="Full Name"
+            value={formData.reporterName}
+            required
+            class="slds-m-bottom_small"
+        ></lightning-input>
+
+        <lightning-input
+            type="text"
+            name="employeeId"
+            label="Employee ID"
+            value={formData.employeeId}
+            required
+            placeholder="e.g. EMP-00123"
+            class="slds-m-bottom_small"
+        ></lightning-input>
+
+        <lightning-combobox
+            name="personnelRole"
+            label="Your Role"
+            value={formData.personnelRole}
+            options={roleOptions}
+            required
+            placeholder="Select your role"
+            class="slds-m-bottom_small"
+        ></lightning-combobox>
+
+        <lightning-input
+            type="email"
+            name="reporterEmail"
+            label="Email Address"
+            value={formData.reporterEmail}
+            required
+            class="slds-m-bottom_small"
+        ></lightning-input>
+
+        <lightning-input
+            type="tel"
+            name="reporterPhone"
+            label="Phone Number (optional)"
+            value={formData.reporterPhone}
+            class="slds-m-bottom_medium"
+        ></lightning-input>
+
+        <div class="slds-grid slds-grid_align-spread">
+            <lightning-button
+                label="Back"
+                onclick={handlePrev}
+            ></lightning-button>
+            <lightning-button
+                label="Next"
+                variant="brand"
+                onclick={handleNext}
+            ></lightning-button>
+        </div>
+    </div>
+</template>

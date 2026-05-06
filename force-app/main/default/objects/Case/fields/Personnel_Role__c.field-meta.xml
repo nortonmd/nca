@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personnel_Role__c</fullName>
+    <externalId>false</externalId>
+    <label>Personnel Role</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pilot</fullName>
+                <default>false</default>
+                <label>Pilot</label>
+            </value>
+            <value>
+                <fullName>First Officer</fullName>
+                <default>false</default>
+                <label>First Officer</label>
+            </value>
+            <value>
+                <fullName>Cabin Crew</fullName>
+                <default>false</default>
+                <label>Cabin Crew</label>
+            </value>
+            <value>
+                <fullName>Ground Crew</fullName>
+                <default>false</default>
+                <label>Ground Crew</label>
+            </value>
+            <value>
+                <fullName>Maintenance Technician</fullName>
+                <default>false</default>
+                <label>Maintenance Technician</label>
+            </value>
+            <value>
+                <fullName>Air Traffic Control</fullName>
+                <default>false</default>
+                <label>Air Traffic Control</label>
+            </value>
+            <value>
+                <fullName>Gate Agent</fullName>
+                <default>false</default>
+                <label>Gate Agent</label>
+            </value>
+            <value>
+                <fullName>Security Personnel</fullName>
+                <default>false</default>
+                <label>Security Personnel</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

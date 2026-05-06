@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>SafetyConcern_RouteToQueue</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedToType>Queue</assignedToType>
+            <assignedTo>Safety_Concerns</assignedTo>
+            <booleanFilter>1</booleanFilter>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Safety Concern</value>
+            </criteriaItems>
+            <template>SafetyConcern/SafetyConcernAssignment</template>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

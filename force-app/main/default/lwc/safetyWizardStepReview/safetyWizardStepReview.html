@@ -1,0 +1,97 @@
+<template>
+    <div class="step-container">
+        <p class="slds-text-heading_small slds-m-bottom_medium">
+            Step 4 of 4 — Review &amp; Submit
+        </p>
+
+        <div class="slds-box slds-m-bottom_medium">
+            <p class="slds-text-heading_x-small slds-m-bottom_small review-section-label">
+                Incident Details
+            </p>
+            <dl class="slds-list_horizontal slds-wrap">
+                <dt class="slds-item_label slds-text-color_weak slds-truncate">Flight Number</dt>
+                <dd class="slds-item_detail">{displayFlightNumber}</dd>
+
+                <dt class="slds-item_label slds-text-color_weak slds-truncate">Date &amp; Time</dt>
+                <dd class="slds-item_detail">{formData.incidentDateTime}</dd>
+
+                <dt class="slds-item_label slds-text-color_weak slds-truncate">Location</dt>
+                <dd class="slds-item_detail">{formData.incidentLocation}</dd>
+
+                <dt class="slds-item_label slds-text-color_weak slds-truncate">Incident Type</dt>
+                <dd class="slds-item_detail">{formData.incidentType}</dd>
+
+                <dt class="slds-item_label slds-text-color_weak slds-truncate">Severity</dt>
+                <dd class="slds-item_detail">
+                    <lightning-badge
+                        label={formData.severity}
+                        class={severityBadgeClass}
+                    ></lightning-badge>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="slds-box slds-m-bottom_medium">
+            <p class="slds-text-heading_x-small slds-m-bottom_small review-section-label">
+                Reporter Information
+            </p>
+            <dl class="slds-list_horizontal slds-wrap">
+                <dt class="slds-item_label slds-text-color_weak slds-truncate">Name</dt>
+                <dd class="slds-item_detail">{formData.reporterName}</dd>
+
+                <dt class="slds-item_label slds-text-color_weak slds-truncate">Employee ID</dt>
+                <dd class="slds-item_detail">{formData.employeeId}</dd>
+
+                <dt class="slds-item_label slds-text-color_weak slds-truncate">Role</dt>
+                <dd class="slds-item_detail">{formData.personnelRole}</dd>
+
+                <dt class="slds-item_label slds-text-color_weak slds-truncate">Email</dt>
+                <dd class="slds-item_detail">{formData.reporterEmail}</dd>
+
+                <template lwc:if={formData.reporterPhone}>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate">Phone</dt>
+                    <dd class="slds-item_detail">{formData.reporterPhone}</dd>
+                </template>
+            </dl>
+        </div>
+
+        <div class="slds-box slds-m-bottom_medium">
+            <p class="slds-text-heading_x-small slds-m-bottom_small review-section-label">
+                Description
+            </p>
+            <p class="slds-text-body_regular">{formData.description}</p>
+
+            <template lwc:if={formData.witnesses}>
+                <p class="slds-text-heading_x-small slds-m-top_small slds-m-bottom_x-small review-section-label">
+                    Witnesses
+                </p>
+                <p class="slds-text-body_regular">{formData.witnesses}</p>
+            </template>
+
+            <template lwc:if={hasAttachments}>
+                <p class="slds-text-body_small slds-m-top_small">
+                    <lightning-icon icon-name="utility:attach" size="x-small"></lightning-icon>
+                    {attachmentCount} file(s) attached
+                </p>
+            </template>
+        </div>
+
+        <p class="slds-text-body_small slds-text-color_weak slds-m-bottom_medium">
+            By submitting, you confirm that the information provided is accurate to the best of your knowledge.
+        </p>
+
+        <div class="slds-grid slds-grid_align-spread">
+            <lightning-button
+                label="Back"
+                disabled={isSubmitting}
+                onclick={handlePrev}
+            ></lightning-button>
+            <lightning-button
+                label={submitLabel}
+                variant="brand"
+                disabled={isSubmitting}
+                onclick={handleSubmit}
+            ></lightning-button>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SafetyConcern</fullName>
+    <active>true</active>
+    <businessProcess>Standard Support Process</businessProcess>
+    <description>Used for safety concern reports submitted by airline personnel through the Experience Cloud portal.</description>
+    <label>Safety Concern</label>
+</RecordType>

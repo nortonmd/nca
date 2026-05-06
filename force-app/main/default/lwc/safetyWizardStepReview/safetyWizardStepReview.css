@@ -1,0 +1,16 @@
+.review-section-label {
+    font-weight: 700;
+    border-bottom: 1px solid var(--lwc-colorBorder, #dddbda);
+    padding-bottom: 4px;
+}
+
+.slds-list_horizontal dt,
+.slds-list_horizontal dd {
+    width: 50%;
+    padding: 4px 0;
+}
+
+.badge-critical { --lwc-badgeColor: #ba0517; }
+.badge-high     { --lwc-badgeColor: #fe9339; }
+.badge-medium   { --lwc-badgeColor: #4bc076; }
+.badge-low      { --lwc-badgeColor: #9faab5; }

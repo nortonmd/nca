@@ -1,0 +1,70 @@
+<template>
+    <div class="step-evaluate">
+        <h2 class="step-title">Evaluate Request</h2>
+        <p class="step-description">Review the request details and comp amount evaluation before submitting.</p>
+
+        <!-- Evaluation Banner -->
+        <div class={bannerClass} role="alert">
+            <span class="banner-icon">{bannerIcon}</span>
+            <div>
+                <p class="banner-title">{bannerTitle}</p>
+                <p class="banner-body">{bannerMessage}</p>
+            </div>
+        </div>
+
+        <!-- Amount Comparison -->
+        <div class="amount-row">
+            <div class="amount-cell">
+                <span class="amount-label">Requested</span>
+                <span class="amount-value">{formattedAmount}</span>
+            </div>
+            <div class="amount-divider">vs</div>
+            <div class="amount-cell">
+                <span class="amount-label">Threshold</span>
+                <span class="amount-value threshold">{formattedThreshold}</span>
+            </div>
+        </div>
+
+        <!-- Summary Card -->
+        <div class="summary-card">
+            <h3 class="summary-title">Request Summary</h3>
+            <dl class="summary-list">
+                <div class="summary-row">
+                    <dt class="summary-dt">Guest</dt>
+                    <dd class="summary-dd">{formData.contactName}</dd>
+                </div>
+                <div class="summary-row">
+                    <dt class="summary-dt">Comp Type</dt>
+                    <dd class="summary-dd">{formData.compType}</dd>
+                </div>
+                <div class="summary-row">
+                    <dt class="summary-dt">Amount</dt>
+                    <dd class="summary-dd amount-highlight">{formattedAmount}</dd>
+                </div>
+                <div class="summary-row">
+                    <dt class="summary-dt">Reason</dt>
+                    <dd class="summary-dd">{formData.reason}</dd>
+                </div>
+                <template lwc:if={hasNotes}>
+                    <div class="summary-row">
+                        <dt class="summary-dt">Notes</dt>
+                        <dd class="summary-dd">{formData.notes}</dd>
+                    </div>
+                </template>
+            </dl>
+        </div>
+
+        <!-- Actions -->
+        <div class="btn-group">
+            <button class="btn-submit" onclick={handleSubmit} disabled={isSubmitting}>
+                <template lwc:if={isSubmitting}>
+                    <lightning-spinner alternative-text="Submitting…" size="small" variant="inverse"></lightning-spinner>
+                </template>
+                <template lwc:else>
+                    SUBMIT REQUEST
+                </template>
+            </button>
+            <button class="btn-back" onclick={handleBack} disabled={isSubmitting}>← Back</button>
+        </div>
+    </div>
+</template>

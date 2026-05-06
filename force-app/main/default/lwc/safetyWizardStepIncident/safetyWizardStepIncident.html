@@ -1,0 +1,64 @@
+<template>
+    <div class="step-container">
+        <p class="slds-text-heading_small slds-m-bottom_medium">
+            Step 1 of 4 — Incident Details
+        </p>
+
+        <lightning-input
+            type="text"
+            name="flightNumber"
+            label="Flight Number"
+            value={formData.flightNumber}
+            placeholder="e.g. AA123"
+            maxlength="20"
+            class="slds-m-bottom_small"
+        ></lightning-input>
+
+        <lightning-input
+            type="datetime-local"
+            name="incidentDateTime"
+            label="Incident Date &amp; Time"
+            value={formData.incidentDateTime}
+            required
+            class="slds-m-bottom_small"
+        ></lightning-input>
+
+        <lightning-combobox
+            name="incidentLocation"
+            label="Incident Location"
+            value={formData.incidentLocation}
+            options={locationOptions}
+            required
+            placeholder="Select a location"
+            class="slds-m-bottom_small"
+        ></lightning-combobox>
+
+        <lightning-combobox
+            name="incidentType"
+            label="Incident Type"
+            value={formData.incidentType}
+            options={incidentTypeOptions}
+            required
+            placeholder="Select an incident type"
+            class="slds-m-bottom_small"
+        ></lightning-combobox>
+
+        <lightning-combobox
+            name="severity"
+            label="Severity"
+            value={formData.severity}
+            options={severityOptions}
+            required
+            placeholder="Select severity"
+            class="slds-m-bottom_medium"
+        ></lightning-combobox>
+
+        <div class="slds-grid slds-grid_align-end">
+            <lightning-button
+                label="Next"
+                variant="brand"
+                onclick={handleNext}
+            ></lightning-button>
+        </div>
+    </div>
+</template>

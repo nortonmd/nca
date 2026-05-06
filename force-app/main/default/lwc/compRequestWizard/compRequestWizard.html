@@ -1,0 +1,84 @@
+<template>
+    <div class="wizard-wrapper">
+        <!-- Header -->
+        <div class="wizard-header">
+            <div class="wizard-header__icon">🎰</div>
+            <div>
+                <h1 class="wizard-header__title">Comp Request</h1>
+                <p class="wizard-header__subtitle">Submit a guest complimentary request</p>
+            </div>
+        </div>
+
+        <!-- Card Body -->
+        <div class="wizard-card">
+
+            <!-- Success State -->
+            <template lwc:if={isSubmitted}>
+                <div class="success-container">
+                    <div class="success-icon">✓</div>
+                    <h2 class="success-title">Request Submitted!</h2>
+                    <template lwc:if={isFlaggedForReview}>
+                        <p class="success-message flagged">
+                            This request has been flagged for manager review due to the amount requested.
+                            Your manager has been notified.
+                        </p>
+                    </template>
+                    <template lwc:else>
+                        <p class="success-message">
+                            Your comp request has been submitted successfully.
+                        </p>
+                    </template>
+                    <lightning-button
+                        label="View Request"
+                        variant="brand"
+                        onclick={handleViewRecord}
+                        class="success-btn"
+                    ></lightning-button>
+                    <lightning-button
+                        label="Submit Another"
+                        variant="neutral"
+                        onclick={handleReset}
+                        class="success-btn"
+                    ></lightning-button>
+                </div>
+            </template>
+
+            <!-- Wizard Steps -->
+            <template lwc:else>
+                <!-- Progress Indicator -->
+                <div class="progress-container">
+                    <lightning-progress-indicator
+                        current-step={currentStepLabel}
+                        type="base"
+                        has-error="false"
+                        variant="base"
+                    >
+                        <lightning-progress-step label="Details"  value="details"></lightning-progress-step>
+                        <lightning-progress-step label="Evaluate" value="evaluate"></lightning-progress-step>
+                    </lightning-progress-indicator>
+                </div>
+
+                <!-- Step Content -->
+                <div class="step-container">
+                    <template lwc:if={isStepDetails}>
+                        <c-comp-request-step-details
+                            form-data={formData}
+                            onstepnext={handleStepNext}
+                        ></c-comp-request-step-details>
+                    </template>
+
+                    <template lwc:if={isStepEvaluate}>
+                        <c-comp-request-step-evaluate
+                            form-data={formData}
+                            threshold={threshold}
+                            is-submitting={isSubmitting}
+                            onstepprev={handleStepPrev}
+                            onsubmitrequest={handleSubmit}
+                        ></c-comp-request-step-evaluate>
+                    </template>
+                </div>
+            </template>
+
+        </div>
+    </div>
+</template>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incident_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Incident Type</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mechanical Failure</fullName>
+                <default>false</default>
+                <label>Mechanical Failure</label>
+            </value>
+            <value>
+                <fullName>Hazardous Material</fullName>
+                <default>false</default>
+                <label>Hazardous Material</label>
+            </value>
+            <value>
+                <fullName>Near Miss</fullName>
+                <default>false</default>
+                <label>Near Miss</label>
+            </value>
+            <value>
+                <fullName>Wildlife Strike</fullName>
+                <default>false</default>
+                <label>Wildlife Strike</label>
+            </value>
+            <value>
+                <fullName>Ground Collision</fullName>
+                <default>false</default>
+                <label>Ground Collision</label>
+            </value>
+            <value>
+                <fullName>Fuel Spill</fullName>
+                <default>false</default>
+                <label>Fuel Spill</label>
+            </value>
+            <value>
+                <fullName>Passenger Injury</fullName>
+                <default>false</default>
+                <label>Passenger Injury</label>
+            </value>
+            <value>
+                <fullName>Crew Injury</fullName>
+                <default>false</default>
+                <label>Crew Injury</label>
+            </value>
+            <value>
+                <fullName>Security Breach</fullName>
+                <default>false</default>
+                <label>Security Breach</label>
+            </value>
+            <value>
+                <fullName>Weather Event</fullName>
+                <default>false</default>
+                <label>Weather Event</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

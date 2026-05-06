@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incident_Location__c</fullName>
+    <externalId>false</externalId>
+    <label>Incident Location</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gate</fullName>
+                <default>false</default>
+                <label>Gate</label>
+            </value>
+            <value>
+                <fullName>Runway</fullName>
+                <default>false</default>
+                <label>Runway</label>
+            </value>
+            <value>
+                <fullName>Taxiway</fullName>
+                <default>false</default>
+                <label>Taxiway</label>
+            </value>
+            <value>
+                <fullName>Ramp</fullName>
+                <default>false</default>
+                <label>Ramp</label>
+            </value>
+            <value>
+                <fullName>Cabin</fullName>
+                <default>false</default>
+                <label>Cabin</label>
+            </value>
+            <value>
+                <fullName>Cockpit</fullName>
+                <default>false</default>
+                <label>Cockpit</label>
+            </value>
+            <value>
+                <fullName>Baggage Area</fullName>
+                <default>false</default>
+                <label>Baggage Area</label>
+            </value>
+            <value>
+                <fullName>Hangar</fullName>
+                <default>false</default>
+                <label>Hangar</label>
+            </value>
+            <value>
+                <fullName>Terminal</fullName>
+                <default>false</default>
+                <label>Terminal</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,78 @@
+<template>
+    <div class="wizard-container slds-card slds-p-around_large">
+        <div class="slds-text-heading_large slds-m-bottom_medium">
+            Safety Concern Report
+        </div>
+
+        <lightning-progress-indicator
+            current-step={currentStepLabel}
+            type="base"
+            has-error="false"
+            class="slds-m-bottom_large"
+        >
+            <lightning-progress-step label="Incident" value="incident"></lightning-progress-step>
+            <lightning-progress-step label="Reporter"  value="reporter"></lightning-progress-step>
+            <lightning-progress-step label="Details"   value="description"></lightning-progress-step>
+            <lightning-progress-step label="Review"    value="review"></lightning-progress-step>
+        </lightning-progress-indicator>
+
+        <template lwc:if={isStepIncident}>
+            <c-safety-wizard-step-incident
+                form-data={formData}
+                onstepnext={handleStepNext}
+            ></c-safety-wizard-step-incident>
+        </template>
+
+        <template lwc:if={isStepReporter}>
+            <c-safety-wizard-step-reporter
+                form-data={formData}
+                onstepnext={handleStepNext}
+                onstepprev={handleStepPrev}
+            ></c-safety-wizard-step-reporter>
+        </template>
+
+        <template lwc:if={isStepDescription}>
+            <c-safety-wizard-step-description
+                form-data={formData}
+                onstepnext={handleStepNext}
+                onstepprev={handleStepPrev}
+            ></c-safety-wizard-step-description>
+        </template>
+
+        <template lwc:if={isStepReview}>
+            <c-safety-wizard-step-review
+                form-data={formData}
+                is-submitting={isSubmitting}
+                onsubmit={handleSubmit}
+                onstepprev={handleStepPrev}
+            ></c-safety-wizard-step-review>
+        </template>
+
+        <template lwc:if={isSubmitted}>
+            <div class="slds-illustration slds-illustration_small slds-m-top_large">
+                <div class="slds-illustration__figure">
+                    <lightning-icon
+                        icon-name="utility:success"
+                        variant="success"
+                        size="large"
+                    ></lightning-icon>
+                </div>
+                <div class="slds-illustration__message slds-m-top_medium">
+                    <p class="slds-text-heading_medium">Report Submitted</p>
+                    <p class="slds-text-body_regular slds-m-top_small">
+                        Your safety concern has been logged. Case number:
+                        <strong>{submittedCaseId}</strong>
+                    </p>
+                    <p class="slds-text-body_small slds-m-top_small">
+                        The safety team will review your report and follow up with you directly.
+                    </p>
+                    <lightning-button
+                        label="Submit Another Report"
+                        class="slds-m-top_medium"
+                        onclick={handleReset}
+                    ></lightning-button>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

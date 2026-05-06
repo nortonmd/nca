@@ -1,40 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionCalls>
-        <name>Get_Rate_Guidance</name>
-        <label>Get Rate Guidance</label>
-        <locationX>176</locationX>
-        <locationY>158</locationY>
-        <actionName>RateGuidanceAction</actionName>
-        <actionType>apex</actionType>
-        <connector>
-            <targetReference>Filter_Recommendations</targetReference>
-        </connector>
-    </actionCalls>
     <contextRecordType>Property_Response__c</contextRecordType>
-    <filter>
-        <name>Filter_Recommendations</name>
-        <label>Filter Recommendations</label>
-        <locationX>176</locationX>
-        <locationY>278</locationY>
-        <childNode>Output</childNode>
-        <conditionLogic>and</conditionLogic>
-        <conditions>
-            <leftValue>
-                <elementReference>Get_Rate_Guidance.Rate_Guidance_Score</elementReference>
-            </leftValue>
-            <operator>GreaterThan</operator>
-            <rightValue>
-                <numberValue>80.0</numberValue>
-            </rightValue>
-        </conditions>
-    </filter>
     <label>Rate Guidance Strategy</label>
-    <mutuallyExclusive>false</mutuallyExclusive>
     <union>
-        <name>Output</name>
         <label>Output</label>
-        <locationX>176</locationX>
-        <locationY>398</locationY>
+        <name>Output</name>
     </union>
 </RecommendationStrategy>

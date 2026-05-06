@@ -1,0 +1,70 @@
+/* ── Step Title ──────────────────────────────────────────────────────────── */
+.step-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #16325c;
+    margin: 0 0 4px;
+}
+
+.step-description {
+    color: #54698d;
+    font-size: 0.85rem;
+    margin: 0 0 20px;
+}
+
+/* ── Field Groups ─────────────────────────────────────────────────────────── */
+.field-group {
+    margin-bottom: 18px;
+}
+
+.field-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #3e3e3c;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.required-label::after {
+    content: ' *';
+    color: #c23934;
+}
+
+.field-error {
+    color: #c23934;
+    font-size: 0.78rem;
+    margin: 4px 0 0;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* ── Button ──────────────────────────────────────────────────────────────── */
+.btn-group {
+    margin-top: 28px;
+}
+
+.btn-next {
+    width: 100%;
+    padding: 16px;
+    background-color: #1a6fd4;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-next:hover {
+    background-color: #0b5dbf;
+}
+
+.btn-next:active {
+    background-color: #0a4fa3;
+}

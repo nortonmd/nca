@@ -1,0 +1,57 @@
+<template>
+    <div class="step-container">
+        <p class="slds-text-heading_small slds-m-bottom_medium">
+            Step 3 of 4 — Description &amp; Attachments
+        </p>
+
+        <lightning-textarea
+            name="description"
+            label="Describe what happened"
+            value={formData.description}
+            required
+            min-length="20"
+            max-length="32000"
+            placeholder="Provide a clear, factual description of the safety concern, including what you observed, any immediate actions taken, and potential contributing factors."
+            class="slds-m-bottom_small"
+        ></lightning-textarea>
+
+        <lightning-textarea
+            name="witnesses"
+            label="Witnesses (optional)"
+            value={formData.witnesses}
+            placeholder="List names and employee IDs of any witnesses, one per line."
+            class="slds-m-bottom_medium"
+        ></lightning-textarea>
+
+        <div class="slds-m-bottom_medium">
+            <p class="slds-form-element__label slds-m-bottom_x-small">
+                Supporting Documents (optional)
+            </p>
+            <lightning-file-upload
+                label="Attach photos, reports, or other evidence"
+                name="supportingFiles"
+                accept={acceptedFormats}
+                record-id={uploadRecordId}
+                multiple
+                onuploadfinished={handleUploadFinished}
+            ></lightning-file-upload>
+            <template lwc:if={hasAttachments}>
+                <p class="slds-text-body_small slds-m-top_x-small slds-text-color_success">
+                    {attachmentCount} file(s) attached
+                </p>
+            </template>
+        </div>
+
+        <div class="slds-grid slds-grid_align-spread">
+            <lightning-button
+                label="Back"
+                onclick={handlePrev}
+            ></lightning-button>
+            <lightning-button
+                label="Next"
+                variant="brand"
+                onclick={handleNext}
+            ></lightning-button>
+        </div>
+    </div>
+</template>

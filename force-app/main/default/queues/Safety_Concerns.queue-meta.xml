@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <email>safety-concerns@airline.example.com</email>
+    <label>Safety Concerns</label>
+    <name>Safety_Concerns</name>
+    <objects>
+        <object>Case</object>
+    </objects>
+</Queue>

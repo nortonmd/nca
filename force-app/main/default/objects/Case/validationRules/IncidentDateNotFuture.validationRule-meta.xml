@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IncidentDateNotFuture</fullName>
+    <active>true</active>
+    <description>Prevents an incident date/time from being set in the future on Safety Concern cases.</description>
+    <errorConditionFormula>RecordType.DeveloperName = 'SafetyConcern' &amp;&amp; Incident_Date_Time__c &gt; NOW()</errorConditionFormula>
+    <errorDisplayField>Incident_Date_Time__c</errorDisplayField>
+    <errorMessage>Incident Date &amp; Time cannot be in the future.</errorMessage>
+</ValidationRule>
