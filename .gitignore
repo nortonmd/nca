@@ -1,0 +1,18 @@
+# Salesforce DX
+.sf/
+.sfdx/
+.localdevserver/
+
+# Build/log
+*.log
+
+# OS
+.DS_Store
+
+# Editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
